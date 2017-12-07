@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- 클릭했을 때 배경 색 변경하지 않으려면 삭제 -->
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:state_selected="true" android:drawable="@color/transparent"/>
+    <item android:state_focused="true" android:drawable="@color/transparent"/>
+    <item android:state_pressed="true" android:drawable="@color/transparent"/> <!-- 클릭했을 때 배경 색 -->
+    <item android:drawable="@color/transparent"/>
+</selector>

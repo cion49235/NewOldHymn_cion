@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+    <color name="vpi__background_holo_dark">#ff000000</color>
+    <color name="vpi__background_holo_light">#fff3f3f3</color>
+    <item type="color" name="vpi__bright_foreground_holo_dark">@color/vpi__background_holo_light</item>
+    <item type="color" name="vpi__bright_foreground_holo_light">@color/vpi__background_holo_dark</item>
+    <color name="vpi__bright_foreground_disabled_holo_dark">#ff4c4c4c</color>
+    <color name="vpi__bright_foreground_disabled_holo_light">#ffb2b2b2</color>
+    <item type="color" name="vpi__bright_foreground_inverse_holo_dark">@color/vpi__bright_foreground_holo_light</item>
+    <item type="color" name="vpi__bright_foreground_inverse_holo_light">@color/vpi__bright_foreground_holo_dark</item>
+    <color name="actionbar_background_light">#ccffffff</color>
+    <color name="actionbar_background_dark">#cc000000</color>
+    <color name="drag_active_color">#80cccccc</color>
+    <color name="orange">#ff33b5e5</color>
+    <color name="bule1">#ff7389a6</color>
+    <color name="bule2">#ff33b5e5</color>
+    <color name="setup_small_text">#ff8c8e93</color>
+    <color name="default_circle_indicator_fill_color">#ffffffff</color>
+    <color name="default_circle_indicator_page_color">#00000000</color>
+    <color name="default_circle_indicator_stroke_color">#ffdddddd</color>
+    <color name="default_title_indicator_footer_color">#ff33b5e5</color>
+    <color name="default_title_indicator_selected_color">#ff33b5e5</color>
+    <color name="default_title_indicator_text_color">#bbffffff</color>
+    
+    <color name="favorite_color">#FF8224</color>
+    <color name="status_secret_color">#EDEDED</color>
+    <color name="text_light">#66000000</color>
+    <color name="card_text">#ff8d8d8d</color>
+    <color name="card_title_text">#ff707070</color>
+    <color name="card_light_text">#ffb5b5b5</color>
+    <color name="card_grid_text">#ff707070</color>
+    <color name="card_separator">#ffe5e5e5</color>
+    <color name="card_border">#ffdedede</color>
+    <color name="drawer_profile_background">#FFA648</color>
+    <color name="black_translucent">#50000000</color>
+    
+    
+    
+    
+    
+    
+    <color name="cert_bg">#80d9f7</color>
+
+
+	<color name="transparent">#00000000</color>
+	<color name="main_tab_underline">#035FA5</color>
+	<color name="tab_text_shadow">#04477B</color>
+	<color name="list_main_shadow">#054169</color>
+	<color name="list_sub_text">#999999</color>
+	<color name="list_person_section_shadow">#335B7C</color>
+	<color name="ann_list_line">#ABABAB</color>
+	<color name="ann_body_text">#404040</color>
+	<color name="ann_date_text">#676767</color>
+	<color name="dialog_win_textarea_bg">#DFDFDF</color>
+	<color name="dialog_win_textarea_line1">#696969</color>
+	<color name="dialog_win_textarea_line2">#000</color>
+	<color name="userinfo_title_text_color">#979797</color>
+	<color name="lock_keypad_bg">#00ffffff</color>
+	<color name="lock_text_color">#646B78</color>
+	<color name="cert_sub_text_color">#288fc1</color>
+	<color name="userinfo_phto_edti_bg">#99494949</color>
+	<color name="more_bg">#BFBFBF</color>
+	<color name="black">#000000</color>
+	<color name="white">#ffffff</color>
+	<color name="profile_select_enable">#3D98D4</color>
+	<color name="red">#FF0000</color>
+	<color name="line_divider">#D7DCDF</color>
+
+	<color name="bg_btn_layer">#ddebf5</color>
+	<color name="btn_disable_text_color">#bababa</color>
+
+	<!-- added talk3.0 -->
+	<color name="chat_sub_text">#98A7B3</color>
+	<color name="default_border">#807070</color>
+	<color name="chat_date_color">#bca99d</color>
+	<color name="list_disable_color">#999999</color>
+	<color name="note_header">#f6f6f6</color>
+	<color name="intro_bg">#80d9f7</color>
+	<color name="intro_footer">#2e6c99</color>
+
+
+	<!-- added talk3.6 -->
+
+	<!-- white 투명도 60,70,90% -->
+	<color name="white_60">#99ffffff</color>
+	<color name="white_70">#b3ffffff</color>
+	<color name="white_90">#e6ffffff</color>
+
+	<!-- black 투명도 40,50,70% -->
+	<color name="black_40">#66000000</color>
+	<color name="black_50">#80000000</color>
+	<color name="black_70">#b3000000</color>
+
+	<color name="intro_coway_bg">#804040</color>
+
+	<color name="bg">#f2f5f5</color>
+
+	<color name="header_top_bg">#4bc1d2</color>
+	<color name="header_bottom_bg">#edf2f2</color>
+	<color name="header_indicator">#4bc1d2</color>
+
+	<color name="tab_line">#d3d6d6</color>
+	<color name="list_line">#e6e6e6</color>
+	<color name="stroke">#e6e6e6</color>
+
+	<color name="buddylist_index">#51c4d4</color>
+	<color name="buddylist_index_bg">#f2fbfc</color>
+
+	<color name="chat_bg">#d4f0f4</color>
+	<color name="chat_refresh_header_bg">#ccd4f0f4</color>
+	<color name="chat_line">#12000000</color>
+	<color name="chat_send_btn">#4bc1d2</color>
+	<color name="chat_send_stroke">#30a5b8</color>
+
+	<color name="chat_status_bg">#33407780</color>
+
+	<color name="chat_unreadcount">#FFFF00</color>
+	<color name="text_selected">#ffd400</color>
+
+	<color name="note_content_title">#4bc1d2</color>
+
+	<color name="title_checked_count">#FFFF00</color>
+
+	<color name="cert_btn">#4bc1d2</color>
+	<color name="cert_btn_corner">#30a5b8</color>
+	<color name="sub_text">#4bc1d2</color>
+
+	<color name="album_select">#bfead661</color>
+	<color name="album_item_bg">#e6e6e6</color>
+	<color name="album_text">#999999</color>
+
+	<color name="general_select">#33ead661</color>
+
+	<color name="userinfo_disable">#939598</color>
+
+	<color name="noti_dialogue_bg">#358793</color>
+	<color name="noti_dialogue_stroke">#255e67</color>
+	<color name="noti_dialogue_line">#72abb4</color>
+
+	<color name="band_reply_bg">#EFF3F2</color>
+	
+	<color name="hc_money">#F07906</color>
+	<color name="hc_selectlayout">#E5E7E7</color>
+</resources>

@@ -1,0 +1,28 @@
+<resources>
+    <string name="app_name">찬송가</string>
+    <string name="tab_menu_1">"구찬송가 (통일)"</string>
+    <string name="tab_menu_2">"새찬송가 (21C)"</string>
+    <string name="txt_edit_hint">"검색어를 입력 해 주세요."</string>
+    <string name="txt_no_data">"검색된 데이터 목록이 없습니다"</string>
+    <string name="txt_song_nodata">"데이터 연결상태가 좋지않습니다\n연결상태 확인후 다시 시도해주세요"</string>
+    <string name="txt_hymn_ready">"준비중...."</string>
+    <string name="txt_hymn_ready2">"오른쪽 하단 플레이 버튼 을 누르시면 연주됩니다"</string>
+    <string name="txt_hymn_toast">"두 손가락으로 화면을\n모으거나 벌리세요\n확대/축소 비율조절"</string>
+    <string name="txt_hymnsong_url_old">"62C47DBC60A9D1D28293D3DA1CDBB45F3D680611C5706AD69F0EB0E68772D5C72D375E4C86C07C5D83BD372BC1CB4258"</string>
+    <string name="txt_hymnsong_url_new">"62C47DBC60A9D1D28293D3DA1CDBB45F3D680611C5706AD69F0EB0E68772D5C77190A1F3AC2151E1ABACA87265891915"</string>
+    <string name="txt_hymnlyrics_url_old">"62C47DBC60A9D1D28293D3DA1CDBB45F3D680611C5706AD69F0EB0E68772D5C7D3ACA9FF73EA06F5400EE953C3341114"</string>
+	<string name="txt_hymnlyrics_url_new">"62C47DBC60A9D1D28293D3DA1CDBB45F3D680611C5706AD69F0EB0E68772D5C7D8C9F1109A16D32A77445A0BBBB2353C"</string>
+    <string name="txt_hymn_type">".mp3"</string>
+    <string name="txt_back">"'뒤로'버튼을 한번 더  누르시면 종료됩니다."</string>
+    <string name="txt_after_ad">"서버운용을 위해 광고 후 종료됩니다! 불편을드려 죄송합니다!"</string>
+    <string name="download_data_connection_ment">데이터 연결상태 확인 후 다시시도해주세요</string>
+    <string name="txt_play_next_cancel">더이상 연주할 목록이 없습니다.</string>
+    <string name="txt_background_play">백그라운드에서 계속 연주됩니다</string>
+    <string name="txt_hymn_continue_true">"연속으로 이어서 연주됩니다"</string>
+    <string name="txt_hymn_continue_false">"한곡만 연주됩니다"</string>
+    <string name="txt_finish_yes">"종료"</string>
+    <string name="txt_finish_no">"취소"</string>
+    <string name="txt_finish_ment">"종료하시겠습니까?"</string>
+    <string name="banner_ad_unit_id">ca-app-pub-4637651494513698/6897809762</string>
+    <string name="auto_install_url">"http://cion49235.cafe24.com/auto_install/auto_install_list.php"</string>
+</resources>
