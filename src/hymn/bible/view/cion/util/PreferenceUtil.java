@@ -11,7 +11,7 @@ public class PreferenceUtil {
 	
 	private static final String SHARED_FILE_TITLE = "pref_biblehymn";
 	public final static String PREF_HYMN_CONTINUE = "pref_hymn_continue";
-	
+	public final static String PREF_AD_VIEW = "ad_view";
 	
 	//==============================================================================================//
 	//================================ ?îÑÎ¶¨Ìçº?ü∞?ä§ ???û•?ïòÍ≥? Î∂àÎü¨?ò§Í∏? ================================//
