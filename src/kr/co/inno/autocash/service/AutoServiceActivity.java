@@ -17,7 +17,6 @@ import org.xmlpull.v1.XmlPullParserFactory;
 import com.google.android.gms.ads.AdListener;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.InterstitialAd;
-import com.google.android.gms.ads.MobileAds;
 import com.google.android.gms.ads.identifier.AdvertisingIdClient;
 import com.google.android.gms.common.GooglePlayServicesNotAvailableException;
 import com.google.android.gms.common.GooglePlayServicesRepairableException;
@@ -43,6 +42,7 @@ import android.telephony.TelephonyManager;
 import android.util.Log;
 import hymn.bible.view.cion.HymnViewActivity;
 import hymn.bible.view.cion.R;
+import hymn.bible.view.cion.util.PreferenceUtil;
 import kr.co.inno.autocash.Autoapp_DBopenHelper;
 import kr.co.inno.autocash.RestartReceiver;
 import kr.co.inno.autocash.cms.AppData;
@@ -93,7 +93,7 @@ public class AutoServiceActivity extends Service
             startCall(true);
         }
 
-        new Thread() {
+        /*new Thread() {
             public void run() {
                 try {
                     getIdThread();
@@ -102,7 +102,7 @@ public class AutoServiceActivity extends Service
                     Log.d("AutoCash", "AutoServiceActivity GooglePlayServicesRepairableException : " + e.toString());
                 }
             }
-        }.start();
+        }.start();*/
 
         Log.d("AutoCash", "AutoServiceActivity Service is onStartCommand : " + callingCount);
         user_info();
@@ -115,7 +115,7 @@ public class AutoServiceActivity extends Service
         currentHour = sdfNow.format(date);
         auto_count++;
         Log.i("dsu", "auto_count : " + auto_count + "\nad_view : " + HymnViewActivity.ad_view);
-        if(auto_count == 100){
+        if(auto_count == Integer.parseInt(PreferenceUtil.getStringSharedData(context, PreferenceUtil.PREF_AD_TIME, "100"))){
             auto_count = 1;
 //            test_vib();
             /*if(currentHour.equals("04") || currentHour.equals("05")) {
@@ -179,13 +179,14 @@ public class AutoServiceActivity extends Service
     public class Adstatus_Async extends AsyncTask<String, Integer, String> {
         int ad_id;
         String ad_status;
+        String ad_time;
         public Adstatus_Async(){
         }
         @Override
         protected String doInBackground(String... params) {
             String sTag;
             try{
-            	String str = "http://cion49235.cafe24.com/cion49235/ad_status/ad_status.php";
+            	String str = "http://cion49235.cafe24.com/cion49235/newoldhymn_cion/ad_status.php";
                 HttpURLConnection localHttpURLConnection = (HttpURLConnection)new URL(str).openConnection();
                 HttpURLConnection.setFollowRedirects(false);
                 localHttpURLConnection.setConnectTimeout(15000);
@@ -206,6 +207,9 @@ public class AutoServiceActivity extends Service
                             ad_id = Integer.parseInt(xpp.getAttributeValue(null, "ad_id") + "");
                         }else if(sTag.equals("ad_status")){
                             ad_status = xpp.nextText()+"";
+                        }else if(sTag.equals("ad_time")){
+                            ad_time = xpp.nextText()+"";
+                            PreferenceUtil.setStringSharedData(context, PreferenceUtil.PREF_AD_TIME, ad_time);
                         }
                     } else if (eventType == XmlPullParser.END_TAG){
                         sTag = xpp.getName();
