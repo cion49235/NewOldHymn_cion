@@ -79,12 +79,10 @@ public class HymnViewActivity extends Activity implements AdViewListener, OnClic
 	private boolean action_background = false;
 	public static boolean hymn_continue = false;
 	private NativeExpressAdView admobNative;
-	public static boolean ad_view = false;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_hymn_view);
-		ad_view = true;
 		setVolumeControlStream(AudioManager.STREAM_MUSIC);
 		getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
 		AdMixerManager.getInstance().setAdapterDefaultAppCode(AdAdapter.ADAPTER_ADMIXER, "3n6wqou5");
@@ -114,7 +112,6 @@ public class HymnViewActivity extends Activity implements AdViewListener, OnClic
 	@Override
 	protected void onDestroy() {
 		super.onDestroy();
-		ad_view = false;
 //		admobNative.destroy();
 		getWindow().clearFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
 		action_background = false;
@@ -136,7 +133,6 @@ public class HymnViewActivity extends Activity implements AdViewListener, OnClic
 	protected void onUserLeaveHint() {
 		// TODO Auto-generated method stub
 		super.onUserLeaveHint();
-		ad_view = true;
 		Log.i("dsu","onUserLeaveHint===>");
 	}
 	
@@ -351,7 +347,7 @@ public class HymnViewActivity extends Activity implements AdViewListener, OnClic
 			}
 			if(PreferenceUtil.getBooleanSharedData(context, PreferenceUtil.PREF_HYMN_CONTINUE, hymn_continue) == true){
 				action_background = false;
-				addInterstitialView();
+//				addInterstitialView();
 				handler.postDelayed(new Runnable() {
 					@Override
 					public void run() {

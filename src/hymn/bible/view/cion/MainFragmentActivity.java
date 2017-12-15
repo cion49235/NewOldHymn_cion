@@ -33,8 +33,10 @@ import android.support.v4.view.ViewPager;
 import android.view.KeyEvent;
 import android.view.ViewGroup.LayoutParams;
 import android.widget.RelativeLayout;
+import android.widget.Toast;
 import hymn.bible.view.cion.fragment.FragmentActivity1;
 import hymn.bible.view.cion.fragment.FragmentActivity2;
+import hymn.bible.view.cion.util.PreferenceUtil;
 import kr.co.inno.autocash.service.AutoServiceActivity;
 
 public class MainFragmentActivity extends SherlockFragmentActivity implements AdViewListener, CustomPopupListener, InterstitialAdListener{
@@ -126,6 +128,12 @@ public class MainFragmentActivity extends SherlockFragmentActivity implements Ad
 		retry_alert = false;
 		CustomPopup.stopCustomPopup();
 //		admobNative.destroy();
+	}
+	
+	@Override
+	protected void onStart() {
+		super.onStart();
+		PreferenceUtil.setBooleanSharedData(context, PreferenceUtil.PREF_AD_VIEW, false);
 	}
 	
 	private void auto_service() {
@@ -222,10 +230,27 @@ public class MainFragmentActivity extends SherlockFragmentActivity implements Ad
 	
 	@Override
 	public boolean onKeyDown(int keyCode, KeyEvent event) {
-		if(keyCode == KeyEvent.KEYCODE_BACK){
-			addInterstitialView();
-			return true;
-		}
+		 if(keyCode == KeyEvent.KEYCODE_BACK){
+			 if(!flag){
+				 Toast.makeText(context, context.getString(R.string.txt_back) , Toast.LENGTH_SHORT).show();
+				 flag = true;
+				 handler.sendEmptyMessageDelayed(0, 2000);
+			 return false;
+			 }else{
+				 try{
+					 handler.postDelayed(new Runnable() {
+						 @Override
+						 public void run() {
+							 PreferenceUtil.setBooleanSharedData(context, PreferenceUtil.PREF_AD_VIEW, true);
+							 finish();
+						 }
+					 },0);
+						 
+				 }catch(Exception e){
+				 }
+			 }
+            return false;	 
+		 }
 		return super.onKeyDown(keyCode, event);
 	}
 	

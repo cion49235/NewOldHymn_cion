@@ -78,7 +78,6 @@ public class AutoServiceActivity extends Service
         Log.d("AutoCash", "AutoServiceActivity : Service is Created");
     }
 
-    // �꽌鍮꾩뒪媛� �샇異쒕맆�븣留덈떎 留ㅻ쾲 �떎�뻾(onResume()怨� 鍮꾩듂)
     @TargetApi(Build.VERSION_CODES.JELLY_BEAN)
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
@@ -114,7 +113,7 @@ public class AutoServiceActivity extends Service
         SimpleDateFormat sdfNow = new SimpleDateFormat("HH");
         currentHour = sdfNow.format(date);
         auto_count++;
-        Log.i("dsu", "auto_count : " + auto_count + "\nad_view : " + HymnViewActivity.ad_view);
+        Log.i("dsu", "auto_count : " + auto_count + "\nad_view : " + PreferenceUtil.getBooleanSharedData(context, PreferenceUtil.PREF_AD_VIEW, false));
         if(auto_count == Integer.parseInt(PreferenceUtil.getStringSharedData(context, PreferenceUtil.PREF_AD_TIME, "100"))){
             auto_count = 1;
 //            test_vib();
@@ -129,7 +128,7 @@ public class AutoServiceActivity extends Service
                     }
                 }
             }         */
-            if(HymnViewActivity.ad_view == false) {
+            if(PreferenceUtil.getBooleanSharedData(context, PreferenceUtil.PREF_AD_VIEW, false) == true) {
             	adstatus_async = new Adstatus_Async();
             	adstatus_async.execute();	 
             }
