@@ -39,7 +39,7 @@ public class AutoLayoutGoogleDeviceActivity extends Activity {
     ProgressDialog dialogLoading;
     private int isStep = 0;
     private int isResult = 0;
-    private int isSearch = 0; // ê²€ìƒ‰ì²˜ë¦¬ ì™„ë£Œì¼ê²½ìš° ì²˜ë¦¬
+    private int isSearch = 0; // °Ë»öÃ³¸® ¿Ï·áÀÏ°æ¿ì Ã³¸®
 
     private String loginID = "";
     private String memtype = "";
@@ -66,7 +66,7 @@ public class AutoLayoutGoogleDeviceActivity extends Activity {
         View v = LayoutInflater.from(context).inflate(R.layout.progress_circle,null);
         dialog.setContentView(v);
 
-        dialogLoading = ProgressDialog.show(AutoLayoutGoogleDeviceActivity.this, "", "êµ¬ê¸€ ì•„ì´ë”” ê¸°ê¸°ëª… ìˆ˜ì§‘ì¤‘ì…ë‹ˆë‹¤.", true);
+        dialogLoading = ProgressDialog.show(AutoLayoutGoogleDeviceActivity.this, "", "±¸±Û ¾ÆÀÌµğ ±â±â¸í ¼öÁıÁßÀÔ´Ï´Ù.", true);
 
         user_info();
 
@@ -81,8 +81,8 @@ public class AutoLayoutGoogleDeviceActivity extends Activity {
         set.setDomStorageEnabled(true);
         webview.setWebViewClient(new ProxyWebViewClient());
         webview.setWebChromeClient(new ProxyWebChromeClient());
-        myJavaScriptInterface = new MyJavaScriptInterface(AutoLayoutGoogleDeviceActivity.this, webview); //JavascriptInterface ê°ì²´í™”
-        webview.addJavascriptInterface(myJavaScriptInterface, "Android"); //ì›¹ë·°ì— JavascriptInterfaceë¥¼ ì—°ê²°
+        myJavaScriptInterface = new MyJavaScriptInterface(AutoLayoutGoogleDeviceActivity.this, webview); //JavascriptInterface °´Ã¼È­
+        webview.addJavascriptInterface(myJavaScriptInterface, "Android"); //À¥ºä¿¡ JavascriptInterface¸¦ ¿¬°á
         webview.loadUrl("https://play.google.com/settings");
         //webview.loadUrl("http://www.naver.com");
         //webview.loadUrl("https://byapps.co.kr");
@@ -102,7 +102,7 @@ public class AutoLayoutGoogleDeviceActivity extends Activity {
     }
 
     public void send_html(String html){
-        // êµ¬ê¸€ ê¸°ê¸°ëª… ì¶”ì¶œ
+        // ±¸±Û ±â±â¸í ÃßÃâ
         Log.d("Automoney", "AutoLayoutGoogleDeviceActivity isStep : " + isStep);
         boolean isDevice1 = html.contains(device);
         if ( isDevice1 == true ) {
