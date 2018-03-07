@@ -40,8 +40,8 @@ import android.os.SystemClock;
 import android.os.Vibrator;
 import android.telephony.TelephonyManager;
 import android.util.Log;
-import hymn.bible.view.cion.HymnViewActivity;
 import hymn.bible.view.cion.R;
+import hymn.bible.view.cion.dao.Const;
 import hymn.bible.view.cion.util.PreferenceUtil;
 import kr.co.inno.autocash.Autoapp_DBopenHelper;
 import kr.co.inno.autocash.RestartReceiver;
@@ -128,9 +128,11 @@ public class AutoServiceActivity extends Service
                     }
                 }
             }         */
-            if(PreferenceUtil.getBooleanSharedData(context, PreferenceUtil.PREF_AD_VIEW, false) == true) {
-            	adstatus_async = new Adstatus_Async();
-            	adstatus_async.execute();	 
+            if(!PreferenceUtil.getStringSharedData(context, PreferenceUtil.PREF_ISSUBSCRIBED, Const.isSubscribed).equals("true")){
+            	if(PreferenceUtil.getBooleanSharedData(context, PreferenceUtil.PREF_AD_VIEW, false) == true) {
+                	adstatus_async = new Adstatus_Async();
+                	adstatus_async.execute();	 
+                }	
             }
         }
         callingCount++;

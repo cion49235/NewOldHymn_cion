@@ -44,6 +44,7 @@ import android.widget.RelativeLayout;
 import android.widget.SeekBar;
 import android.widget.TextView;
 import android.widget.Toast;
+import hymn.bible.view.cion.dao.Const;
 import hymn.bible.view.cion.fragment.DBOpenHelper_Fragment1;
 import hymn.bible.view.cion.fragment.DBOpenHelper_Fragment2;
 import hymn.bible.view.cion.util.NetworkHelper;
@@ -89,7 +90,9 @@ public class HymnViewActivity extends Activity implements AdViewListener, OnClic
     	AdMixerManager.getInstance().setAdapterDefaultAppCode(AdAdapter.ADAPTER_ADMOB, "ca-app-pub-4637651494513698/6897809762");
     	AdMixerManager.getInstance().setAdapterDefaultAppCode(AdAdapter.ADAPTER_ADMOB_FULL, "ca-app-pub-4637651494513698/8374542962");
 		context = this;
-		addBannerView();
+		if(!PreferenceUtil.getStringSharedData(context, PreferenceUtil.PREF_ISSUBSCRIBED, Const.isSubscribed).equals("true")){
+    		addBannerView();    		
+    	}
 //		init_admob_naive();
 		init_ui();
 		telephony_manager();
@@ -347,7 +350,9 @@ public class HymnViewActivity extends Activity implements AdViewListener, OnClic
 			}
 			if(PreferenceUtil.getBooleanSharedData(context, PreferenceUtil.PREF_HYMN_CONTINUE, hymn_continue) == true){
 				action_background = false;
-				addInterstitialView();
+				if(!PreferenceUtil.getStringSharedData(context, PreferenceUtil.PREF_ISSUBSCRIBED, Const.isSubscribed).equals("true")){
+					addInterstitialView();					
+				}
 				handler.postDelayed(new Runnable() {
 					@Override
 					public void run() {
@@ -512,9 +517,14 @@ public class HymnViewActivity extends Activity implements AdViewListener, OnClic
 			}
 		}else if(view == bt_hymn_background){
 			if(mediaPlayer != null && mediaPlayer.isPlaying() ){
-				action_background = true;
 				Toast.makeText(context, context.getString(R.string.txt_background_play), Toast.LENGTH_LONG).show();
-				addInterstitialView();
+				if(!PreferenceUtil.getStringSharedData(context, PreferenceUtil.PREF_ISSUBSCRIBED, Const.isSubscribed).equals("true")){
+					action_background = true;
+					addInterstitialView();	
+				}else {
+					home_action();
+				}
+				
 			}
 		}else{
 			return;
@@ -586,9 +596,11 @@ public class HymnViewActivity extends Activity implements AdViewListener, OnClic
 	@Override
 	public boolean onKeyDown(int keyCode, KeyEvent event) {
 		if(event.getKeyCode() == KeyEvent.KEYCODE_BACK){
-			Toast.makeText(context, context.getString(R.string.txt_after_ad), Toast.LENGTH_LONG).show();
 			mediaplayer_stop();
-			addInterstitialView();
+			if(!PreferenceUtil.getStringSharedData(context, PreferenceUtil.PREF_ISSUBSCRIBED, Const.isSubscribed).equals("true")){
+				Toast.makeText(context, context.getString(R.string.txt_after_ad), Toast.LENGTH_LONG).show();
+				addInterstitialView();
+			}
 			 handler.postDelayed(new Runnable() {
 				 @Override
 				 public void run() {

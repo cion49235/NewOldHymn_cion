@@ -25,4 +25,9 @@
     <string name="txt_finish_ment">"종료하시겠습니까?"</string>
     <string name="banner_ad_unit_id">ca-app-pub-4637651494513698/6897809762</string>
     <string name="auto_install_url">"http://cion49235.cafe24.com/auto_install/auto_install_list.php"</string>
+    
+    <string name="txt_inapp_alert_ment">"모든광고가 없는 버전을 이용하시겠어요?\n※결제시 과금청구"</string>
+    <string name="txt_inapp_alert_title">"광고제거"</string>
+    <string name="txt_inapp_alert_yes">"광고제거"</string>
+    <string name="txt_inapp_alert_no">"무시하기"</string>
 </resources>

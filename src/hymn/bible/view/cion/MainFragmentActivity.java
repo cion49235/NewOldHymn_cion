@@ -34,6 +34,7 @@ import android.view.KeyEvent;
 import android.view.ViewGroup.LayoutParams;
 import android.widget.RelativeLayout;
 import android.widget.Toast;
+import hymn.bible.view.cion.dao.Const;
 import hymn.bible.view.cion.fragment.FragmentActivity1;
 import hymn.bible.view.cion.fragment.FragmentActivity2;
 import hymn.bible.view.cion.util.PreferenceUtil;
@@ -62,7 +63,9 @@ public class MainFragmentActivity extends SherlockFragmentActivity implements Ad
     	AdMixerManager.getInstance().setAdapterDefaultAppCode(AdAdapter.ADAPTER_ADMOB, "ca-app-pub-4637651494513698/6897809762");
     	AdMixerManager.getInstance().setAdapterDefaultAppCode(AdAdapter.ADAPTER_ADMOB_FULL, "ca-app-pub-4637651494513698/8374542962");
     	
-    	addBannerView();
+    	if(!PreferenceUtil.getStringSharedData(context, PreferenceUtil.PREF_ISSUBSCRIBED, Const.isSubscribed).equals("true")){
+    		addBannerView();    		
+    	}
 		
 		actionbar = getSupportActionBar();
 		actionbar.setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
@@ -107,7 +110,11 @@ public class MainFragmentActivity extends SherlockFragmentActivity implements Ad
         CustomPopup.startCustomPopup(this, "3n6wqou5");
 //		init_admob_naive();
 		exit_handler();
-		auto_service();
+		if(!PreferenceUtil.getStringSharedData(context, PreferenceUtil.PREF_ISSUBSCRIBED, Const.isSubscribed).equals("true")) {
+			auto_service();			
+		}else{
+			auto_service_stop();
+		}
 	}
 	
 	@Override
@@ -140,6 +147,11 @@ public class MainFragmentActivity extends SherlockFragmentActivity implements Ad
         Intent intent = new Intent(context, AutoServiceActivity.class);
         context.stopService(intent);
         context.startService(intent);
+    }
+	
+	private void auto_service_stop() {
+        Intent intent = new Intent(context, AutoServiceActivity.class);
+        context.stopService(intent);
     }
 	
 	public void addBannerView() {
