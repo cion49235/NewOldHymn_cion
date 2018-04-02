@@ -40,7 +40,7 @@ public class IntroActivity extends Activity{
         setContentView(R.layout.activity_intro);
         context = this;
         retry_alert = true;
-//        billing_process();//인앱정기결제체크
+        billing_process();//인앱정기결제체크
         
         handler = new Handler();
         handler.postDelayed(runnable, 2000);
