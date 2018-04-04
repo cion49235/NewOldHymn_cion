@@ -518,13 +518,12 @@ public class HymnViewActivity extends Activity implements AdViewListener, OnClic
 		}else if(view == bt_hymn_background){
 			if(mediaPlayer != null && mediaPlayer.isPlaying() ){
 				Toast.makeText(context, context.getString(R.string.txt_background_play), Toast.LENGTH_LONG).show();
-				/*if(!PreferenceUtil.getStringSharedData(context, PreferenceUtil.PREF_ISSUBSCRIBED, Const.isSubscribed).equals("true")){
+				if(!PreferenceUtil.getStringSharedData(context, PreferenceUtil.PREF_ISSUBSCRIBED, Const.isSubscribed).equals("true")){
 					action_background = true;
 					addInterstitialView();	
 				}else {
 					home_action();
-				}*/
-				home_action();
+				}
 			}
 		}else{
 			return;
@@ -597,10 +596,10 @@ public class HymnViewActivity extends Activity implements AdViewListener, OnClic
 	public boolean onKeyDown(int keyCode, KeyEvent event) {
 		if(event.getKeyCode() == KeyEvent.KEYCODE_BACK){
 			mediaplayer_stop();
-			/*if(!PreferenceUtil.getStringSharedData(context, PreferenceUtil.PREF_ISSUBSCRIBED, Const.isSubscribed).equals("true")){
+			if(!PreferenceUtil.getStringSharedData(context, PreferenceUtil.PREF_ISSUBSCRIBED, Const.isSubscribed).equals("true")){
 				Toast.makeText(context, context.getString(R.string.txt_after_ad), Toast.LENGTH_LONG).show();
 				addInterstitialView();
-			}*/
+			}
 			 handler.postDelayed(new Runnable() {
 				 @Override
 				 public void run() {
