@@ -90,9 +90,9 @@ public class HymnViewActivity extends Activity implements AdViewListener, OnClic
     	AdMixerManager.getInstance().setAdapterDefaultAppCode(AdAdapter.ADAPTER_ADMOB, "ca-app-pub-4637651494513698/6897809762");
     	AdMixerManager.getInstance().setAdapterDefaultAppCode(AdAdapter.ADAPTER_ADMOB_FULL, "ca-app-pub-4637651494513698/8374542962");
 		context = this;
-		/*if(!PreferenceUtil.getStringSharedData(context, PreferenceUtil.PREF_ISSUBSCRIBED, Const.isSubscribed).equals("true")){
+		if(!PreferenceUtil.getStringSharedData(context, PreferenceUtil.PREF_ISSUBSCRIBED, Const.isSubscribed).equals("true")){
     		addBannerView();    		
-    	}*/
+    	}
 //		init_admob_naive();
 		init_ui();
 		telephony_manager();
